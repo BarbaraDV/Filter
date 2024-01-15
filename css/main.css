@@ -1,0 +1,707 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1 {
+    font-size: 40px;
+    font-family: 'Amarante', cursive;
+    line-height: 91px;
+    text-align:center;
+}
+
+h2 {
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 61px;
+    text-align: center;
+}
+
+h3 {
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+p{
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29px;
+}
+
+::-webkit-scrollbar{
+    width: 10px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #8e9097; 
+}
+
+::selection {
+    background: #71757ca4;
+    text-shadow: none;
+}
+
+body {
+    font-family: 'Signika Negative', sans-serif;
+    background: #FBF8F8;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 5%;
+}
+
+#sidebar {
+    color: aliceblue;
+    position: fixed;
+    width: 200px;
+    height: 100%;
+    background: black;
+    left: -200px;
+    transition: all 500ms linear;
+}
+
+#sidebar.active {
+    left: 0px;
+}
+  
+#sidebar ul li {
+
+    list-style: none;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(100, 100, 100, .3);
+    text-align: center;
+}
+  
+#sidebar .side-btn {
+    position: absolute;
+    left: 230px;
+    top: 20px;
+    cursor: pointer;
+    color: #e43537;
+}
+  
+#sidebar .side-btn span {
+    display: block;
+    width: 40px;
+    text-align: center;
+    font-size: 30px;
+    border: 3px solid whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: white; 
+}
+
+.welcome {
+    display: flex;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../assets/Fondo.gif);
+}
+
+.welcome img{
+    width: 246px;
+    height: 256px;
+    margin-top: 70px;
+    margin-left: 10px;
+    border-radius: 100%;
+}
+
+.welcome p{
+    letter-spacing: -3px;
+    color: rgb(56, 56, 56);
+    position: center;
+    font-size: 20px;
+}
+
+.welcome h5{
+    color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+}
+
+.main {
+    padding: 30px 0;
+}
+
+.main-container{
+    background-image: url(../assets/Fondo\ body.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.contenedor-acerca{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contenedor-acerca figure{
+   position:relative;
+    height: 290px;
+    cursor: pointer;
+    width: 1250px;
+    overflow: hidden;
+    border-radius: 6px;
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+}
+.contenedor-acerca figure img{
+    width: 100%;
+    height: 100%;
+    transition: all 400ms ease-out;
+    will-change: transform;
+}
+.contenedor-acerca figure .acerca{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(123, 0, 0, 0.7);
+    transition: all 400ms ease-out;
+    opacity: 0;
+    visibility: hidden;
+   text-align: center;
+}
+.contenedor-acerca figure:hover > .acerca {
+    opacity: 1;
+    visibility: visible;
+}
+
+.contenedor-acerca figure:hover > img{
+    transform: scale(1.3);
+}
+
+.contenedor-acerca figure .acerca p{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    width: 100%;
+    max-width: 590px;
+    margin: auto;
+}
+
+.img-slider{
+    position: relative;
+    width: 660px;
+    height: 657px;
+    margin: 6% 20%;
+    background: #1D212B;
+  }
+  
+  .img-slider .slide{
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    clip-path: circle(0% at 0 50%);
+  }
+  
+  .img-slider .slide.active{
+    clip-path: circle(150% at 0 50%);
+    transition: 2s;
+    transition-property: clip-path;
+  }
+  
+  .img-slider .slide img{
+    z-index: 1;
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  .img-slider .slide .info{
+    position: absolute;
+    top: 0;
+    padding: 15px 30px;
+  }
+  
+  .img-slider .slide .info h2{
+    color: #fff;
+    font-size: 45px;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: rgba(0, 0, 0, 0.3);
+  }
+  
+  .img-slider .slide .info p{
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 16px;
+    width: 60%;
+    padding: 10px;
+    border-radius: 4px;
+  }
+  
+  .img-slider .navigation{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .img-slider .navigation .btn{
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 12px;
+    margin: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .img-slider .navigation .btn.active{
+    background: #2696E9;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+.containerP{
+    Width: 100%;
+    Display: Flex;
+    Max-width: 1100px;
+    text-align: center;
+    padding-left: 10%;
+}
+.cardP{
+    width: 100%;
+    margin: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: #7E252C;
+    box-shadow: 0px 1px 10px rgba(0,0,0,0.2);
+    transition: all 400ms ease;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+.cardP:hover{
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.4);
+    transform: translateY(-3%);
+}
+
+.guia-compra {
+    background-color: #E5E5E5;
+}
+
+#encabezado{
+    align-items: left;
+    padding: 5% 6%;
+}
+
+#subtitulo{
+    font-size: 50px;
+    color: #942525;
+    text-align: left;
+}
+
+#encabezado2{
+    font-size: 40px;
+    text-align: left;
+    color: black;
+    letter-spacing: 1px;
+    line-height: 100%;
+}
+
+.contenido-guia{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 70px;
+    padding-right: 20px;
+    line-height: 70px;
+    font-size: 18px;
+}
+
+.ubicacionIconos {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-guia {
+   display: flex;
+   align-items: center;
+}
+
+#img-guia {
+    position: relative;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    width: 13%;
+}
+
+#texto-mov {
+    margin-left: 20px;
+}
+
+#texto-mov2 {
+    margin-left: 20px;
+}
+
+.posicion-muestra {
+    padding-right: 2%;
+    
+}
+
+#contacto{
+	padding: 3rem 0;
+    background-image: url(../assets/Fondo\ body.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 50%;
+}
+.contacto-contenido{
+	text-align: center;
+    padding-bottom: 2rem;
+    color: #4c4c4c;
+}
+
+.containerC{
+	width: 90%;
+	margin: 0 auto;
+	display: grid;
+	grid-gap: 1.2rem;
+}
+.cardC{
+	padding: 2rem 2rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0px 0px 55px 5px rgba(0, 0, 0, 0.493);
+}
+
+.catalogo{
+	width: 90%;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(18rem,1fr));
+	grid-gap: 1.2rem;
+}
+.card-catalogo{
+	padding: 2rem 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+    box-shadow: 0px 0px 55px 5px rgb(0 0 0 / 17%);
+    border-radius: 3%;
+}
+.card-catalogo img{ 
+	width: 100%;
+}
+
+.container-catalogo{
+	padding: 3rem 0;
+}
+.catalogo-contenido{
+	text-align: center;
+    padding-bottom: 2rem;
+    color: #4c4c4c;
+}
+
+.modal{
+    display:none;
+}
+
+.modal:target{
+    display:block;
+    position:fixed;
+    background: rgba(0,0,0,0.9);
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    padding: inherit
+
+}
+
+.imagen{
+    width:100%;
+    height: 50%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen a{
+    color:rgb(245, 245, 245);
+    font-size:40px;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.imagen a:nth-child(2){
+    margin:0;
+    height:100%;
+    flex-shrink: 2;
+}
+.imagen img{
+    width:500px;
+    height:450px;
+    max-width:100%;
+    background-color: rgba(255, 255, 255, 0.267);;
+    border-radius: 2%;
+
+}
+
+.cerrar{
+    display: block;
+    width: 3%;
+    height: 6%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 178px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #fff;
+    padding: 5px;
+    line-height: 25px;
+
+}
+
+#footer-body{
+    display:flex;
+    margin:0px;
+    padding:20px;
+    box-sizing:border-box;
+    justify-content: space-between;   
+}
+
+footer{
+    margin:0 auto;
+    background:#333; 
+}
+
+.container-footer{
+
+    width: 85%;
+    max-width: 1000px;
+    margin:0 auto;
+    padding:5px;
+}
+.redes{
+    align-items: center;
+    display: flex;
+    margin-top: 20px;
+}
+
+.left .row{
+    margin-top: 20px;
+    display: flex;
+}
+
+a{
+   text-decoration: none;
+}
+.redes img{
+    width: 35px;
+    height: 35px;
+}
+
+.redes label{
+    margin-top:5px;
+    margin-left:10px;
+    font-weight: lighter;
+}
+.right{
+    color: #faf7f7;
+}
+
+.otro-contacto{
+    align-items: center;
+    display:flex;
+    margin-top: 20px;
+}
+
+.otro-contacto img{ 
+    width: 36px;
+    height: 36px;
+}
+
+.otro-contacto label{
+    
+   margin-left: 15px;
+    max-width: 190px;
+}
+
+.copy-container{
+    font-size: 17px;
+    display:flex;
+    padding:20px;
+    justify-content: center;
+}
+
+.copyright a{
+ text-decoration: none;
+ color:white;
+ font-weight: bold;
+}
+
+/*Media Queries*/
+
+  @media (min-width: 400px){
+    .img-slider{
+      width: 320px;
+      height: 316px;
+      margin: 5% 15%;
+    }
+
+    .containerP{
+        padding-left: 0px;
+    }
+    .posicion-muestra{
+        width: 140%;
+        padding-right: 0%;
+    }
+    #img-guia{
+        width: 20%;
+    }
+    #texto-mov{
+        font-size: 12px;
+    }
+    #texto-mov2{
+        font-size: 12px;
+    }
+    .contenido-guia{
+        padding-left: 2%;
+    }
+    .img-calidad{
+        width: 15%;
+    }
+    .contenedor-acerca figure{
+        position:relative;
+        height: 158px;
+        cursor: pointer;
+        width: 431px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+    }
+    .acerca h1{
+        font-size: 22px;
+        margin-top: -7%;
+    }
+    .contenedor-acerca figure .acerca p{
+        font-size: 12px;
+        margin-top: -7%;
+        width: 90%;
+    }
+
+  }
+
+  @media (min-width: 500px){
+    .img-slider{
+      width: 400px;
+      height: 400px;
+      margin: 5% 25%;
+
+    }
+    .containerP{
+        padding-left: 0px;
+    }
+    .posicion-muestra{
+        width: 50%;
+        padding-right: 0%;
+    }
+    #img-guia{
+        width: 10%;
+    }
+    #texto-mov{
+        font-size: 19px;
+    }
+    #texto-mov2{
+        font-size: 19px;
+    }
+    .img-calidad{
+        width: 10%;
+    }
+
+    .contenedor-acerca figure{
+        position: relative;
+        height: 290px;
+        cursor: pointer;
+        width: 723px;
+        overflow: hidden;
+        border-radius: 6px;
+        box-shadow: 0px 15px 25px rgb(0,0,0,0.50);
+    }
+    .contenedor-acerca figure .acerca p{
+        color: #fff;
+        font-size: 18px;
+        line-height: 1.5;
+        width: 100%;
+        max-width: 590px;
+        margin: auto;
+    }
+    .acerca h1{
+        font-size: 40px;
+        margin-top: 0%;
+    }
+
+  }
+
+    @media (min-width: 900px){
+        .img-slider{
+            width: 600px;
+            height: 600px;
+            margin: 5% 25%;
+        }
+
+        .containerP{
+            margin-left: 7%;
+        }
+
+        .footer-body{
+            flex-wrap: wrap;
+            
+        }
+        .posicion-muestra{
+            width: 40%;
+            padding-right: 0%;
+        }
+        #img-guia{
+            width: 10%;
+        }
+        #texto-mov{
+            font-size: 19px;
+        }
+        #texto-mov2{
+            font-size: 19px;
+        }
+        .img-calidad{
+            width: 5%;
+        }
+        .contenedor-acerca figure{
+            position:relative;
+            height: 290px;
+            cursor: pointer;
+            width: 1250px;
+            overflow: hidden;
+            border-radius: 6px;
+            box-shadow: 0px 15px 25px rgba(0,0,0,0.50);
+        }
+        .contenedor-acerca figure .acerca p{
+            color: #fff;
+            font-size: 18px;
+            line-height: 1.5;
+            width: 100%;
+            max-width: 590px;
+            margin: auto;
+        }
+        .acerca h1{
+            font-size: 40px;
+            margin-top: 0%;
+        }
+      }
